@@ -5,7 +5,7 @@ library("ggrepel")
 library("tmap")  
 
 options(ggrepel.max.overlaps = Inf)
-df=read.table("MappaItalia.txt",header=T)
+df=read.table("DataLocation.txt",header=T)
 world <- ne_countries(scale = "medium", returnclass = "sf")
 ggplot(data = world) +
     geom_sf(fill= "antiquewhite") +
