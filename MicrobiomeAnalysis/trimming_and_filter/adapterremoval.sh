@@ -17,6 +17,6 @@ mkdir Trimmed
 source activate preprocessing-2020.3
 while read -r i; do
   mkdir Trimmed/$i
-  AdapterRemoval --collapse --basename Trimmed/$i/$i --file1 $folder_path/$i$var1 --file2 $folder_path/$i$var2
+  AdapterRemoval --collapse --basename Trimmed/$i/$i --file1 $folder_path/$i$var1 --file2 $folder_path/$i$var2 --trimns --trimqualities
 done < $file_list
 
