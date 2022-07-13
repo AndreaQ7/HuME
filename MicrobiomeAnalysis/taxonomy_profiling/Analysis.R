@@ -17,7 +17,7 @@ rownames(tax)<-rownames(otu)
 ps=merge_phyloseq(otu,sample,tax)
 id.contam<-c("P-T3S","GIL12","Fer.T65","Fer.T69")
 ps<-subset_samples(psprova,!Name %in% id.contam)
-
+ps = filter_taxa(ps, function(x) sum(x > 3) > (0.02*length(x)), TRUE) 
 #Cluster
 ps %>%
     tax_transform(rank = "unique", trans = "identity") %>%
